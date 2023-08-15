@@ -8,28 +8,22 @@
 7. calculate new balance and set the new balance
 */
 
-// step-1
+// step-1:
 document.querySelector("#btn-withdraw").addEventListener('click', function () {
-    // step-2
-    const withdrawElement = document.querySelector("#withdraw-field");
-    const newWithdrawAmount = parseFloat(withdrawElement.value);
+    // step-2:
+    const newWithdrawAmount = getInputValueById("withdraw-field");
+
+    // step-4:
+    const previousTotalWithdraw = getInnerTextValueById("withdraw-total");
     
-    // step-3
-    withdrawElement.value = '';
+    // step-5:
+    const newDepositTotal = newWithdrawAmount + previousTotalWithdraw;
+    setInnerTextValueById("withdraw-total", newDepositTotal);
 
-    // step-4
-    const withdrawTotalElement = document.querySelector("#withdraw-total");
-    const previousWithdrawTotal = parseFloat(withdrawTotalElement.innerText);
+    // step-6:
+    const previousBalance = getInnerTextValueById("balance-total");
 
-    // step-5
-    const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-    withdrawTotalElement.innerText = newWithdrawTotal;
-
-    // step-6
-    const totalBalanceElement = document.querySelector("#balance-total");
-    const previousBalance = parseFloat(totalBalanceElement.innerText);
-
-    // step-7
+    // step-7:
     const newBalanceTotal = previousBalance - newWithdrawAmount;
-    totalBalanceElement.innerText = newBalanceTotal;
+    setInnerTextValueById("balance-total", newBalanceTotal);
 })

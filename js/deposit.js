@@ -17,26 +17,19 @@
 // step-1:
 document.querySelector("#btn-deposit").addEventListener('click', function () {
     // step-2:
-    const depositField = document.querySelector("#deposit-field");
-    // step-2-5:
-    const newDepositAmount = parseFloat(depositField.value);
-    
-    // step-3:
-    depositField.value = '';
+    const newDepositAmount = getInputValueById("deposit-field");
 
     // step-4:
-    const depositTotalElement = document.querySelector("#deposit-total");
-    const previousTotalDeposit = parseFloat(depositTotalElement.innerText);
+    const previousTotalDeposit = getInnerTextValueById("deposit-total");
     
     // step-5:
     const newDepositTotal = newDepositAmount + previousTotalDeposit;
-    depositTotalElement.innerText = newDepositTotal;
+    setInnerTextValueById("deposit-total", newDepositTotal);
 
     // step-6:
-    const totalBalanceElement = document.querySelector("#balance-total");
-    const previousBalance = parseFloat(totalBalanceElement.innerText);
+    const previousBalance = getInnerTextValueById("balance-total");
 
     // step-7:
     const newBalanceTotal = previousBalance + newDepositAmount;
-    totalBalanceElement.innerText = newBalanceTotal;
+    setInnerTextValueById("balance-total", newBalanceTotal);
 })
