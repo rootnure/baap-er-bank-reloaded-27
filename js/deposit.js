@@ -20,16 +20,16 @@ document.querySelector("#btn-deposit").addEventListener('click', function () {
     const newDepositAmount = getInputValueById("deposit-field");
 
     // step-4:
-    const previousTotalDeposit = getInnerTextValueById("deposit-total");
+    const previousTotalDeposit = getElementValueById("deposit-total");
     
     // step-5:
     const newDepositTotal = newDepositAmount + previousTotalDeposit;
-    setInnerTextValueById("deposit-total", newDepositTotal);
+    setTextElementValueById("deposit-total", newDepositTotal);
 
     // step-6:
-    const previousBalance = getInnerTextValueById("balance-total");
+    const previousBalance = getElementValueById("balance-total");
 
     // step-7:
     const newBalanceTotal = previousBalance + newDepositAmount;
-    setInnerTextValueById("balance-total", newBalanceTotal);
+    setTextElementValueById("balance-total", newBalanceTotal);
 })

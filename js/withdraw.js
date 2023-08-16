@@ -14,16 +14,16 @@ document.querySelector("#btn-withdraw").addEventListener('click', function () {
     const newWithdrawAmount = getInputValueById("withdraw-field");
 
     // step-4:
-    const previousTotalWithdraw = getInnerTextValueById("withdraw-total");
+    const previousTotalWithdraw = getElementValueById("withdraw-total");
     
     // step-5:
     const newDepositTotal = newWithdrawAmount + previousTotalWithdraw;
-    setInnerTextValueById("withdraw-total", newDepositTotal);
+    setTextElementValueById("withdraw-total", newDepositTotal);
 
     // step-6:
-    const previousBalance = getInnerTextValueById("balance-total");
+    const previousBalance = getElementValueById("balance-total");
 
     // step-7:
     const newBalanceTotal = previousBalance - newWithdrawAmount;
-    setInnerTextValueById("balance-total", newBalanceTotal);
+    setTextElementValueById("balance-total", newBalanceTotal);
 })
